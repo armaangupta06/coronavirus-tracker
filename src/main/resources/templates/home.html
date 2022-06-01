@@ -6,6 +6,16 @@
     <title>Coronavirus Tracker Application</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .box {
+            display: flex;
+
+        }
+        div.box {
+            margin: 10px;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -14,30 +24,33 @@
 <p>This application lists the current number of cases reported across the globe</p>
 
 <div class="jumbotron">
-    <h1 class="display-4" th:text="${totalReportedCases}"></h1>
-    <p class="lead">Total cases reported as of today</p>
+    <h1 class="display-4" th:text="${cases}"></h1>
+    <p class="lead">Total cases reported</p>
     <hr class="my-4">
     <p>
-        <span>New cases reported since previous day:</span>
-        <span th:text="${totalNewCases}"></span>
+        <div class="box">
+            <div>Total deaths reported:</div>
+            <div th:text="${deaths}"></div>
+        </div>
+        <div class="box">
+            <div>Total recovered:</div>
+            <div th:text="${recovered}"></div>
+        </div>
+        <div class="box">
+            <div>Total recovered today:</div>
+            <div th:text="${todayRecovered}"></div>
+        </div>
+        <div class="box">
+            <div>Total critical cases:</div>
+            <div th:text="${critical}"></div>
+        </div>
+        <div class="box">
+            <div>Total active cases:</div>
+            <div th:text="${active}"></div>
+        </div>
+
     </p>
 
-</div>
-
-    <table class="table">
-        <tr>
-            <th>State</th>
-            <th>Country</th>
-            <th>Total cases reported</th>
-            <th>Changes since last day</th>
-        </tr>
-        <tr th:each="locationStat : ${locationStats}">
-            <td th:text="${locationStat.state}"></td>
-            <td th:text="${locationStat.country}"></td>
-            <td th:text="${locationStat.latestTotalCases}">0</td>
-            <td th:text="${locationStat.diffFromPrevDay}">0</td>
-        </tr>
-    </table>
 </div>
 </body>
 
