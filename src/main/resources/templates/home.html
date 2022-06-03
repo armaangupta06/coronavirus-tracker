@@ -7,27 +7,61 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
+
         .box {
             display: flex;
+        }
+        .box div{
+            margin: 5px;
 
         }
-        div.box {
-            margin: 10px;
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
+        .title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        .head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1, p {
+            text-align: center;
+            margin: auto;
+        }
+        h1.headitem{
+            margin: auto;
+            text-align:center;
+        }
+
+
+
 
     </style>
 </head>
 
 <body>
 <div class="container">
-<h1>Coronavirus Tracker Application</h1>
-<p>This application lists the current number of cases reported across the globe</p>
+    <div class="head">
+        <h1 class="headitem">Coronavirus Tracker Application</h1>
+        <p class="headitem">This application lists the current number of cases reported across the globe</p>
+    </div>
 
 <div class="jumbotron">
-    <h1 class="display-4" th:text="${cases}"></h1>
-    <p class="lead">Total cases reported</p>
+    <div class="title">
+        <h1 class="display-4" th:text="${cases}"></h1>
+        <p class="lead">Total cases reported</p>
+    </div>
+
     <hr class="my-4">
-    <p>
+    <div class="main">
         <div class="box">
             <div>Total deaths reported:</div>
             <div th:text="${deaths}"></div>
@@ -49,8 +83,9 @@
             <div th:text="${active}"></div>
         </div>
 
-    </p>
+    </div>
 
+</div>
 </div>
 </body>
 
