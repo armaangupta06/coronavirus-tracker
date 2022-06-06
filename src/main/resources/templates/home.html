@@ -8,37 +8,88 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <style>
 
+
+        body, html {
+            display: flex;
+            flex-direction: column;
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Roboto';
+            justify-content: space-between;
+            background-color: #1F2937;
+
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            background-color: #1F2937;
+
+        }
         .box {
             display: flex;
+            align-items: center;
         }
         .box div{
             margin: 5px;
+            font-size: 26px;
+            color: #1F2937;
 
+        }
+        .lead {
+            font-weight: 600;
+            color: #1F2937;
         }
         .main {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 10px;
+
         }
         .title{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            border-radius: 1rem;
+        }
         .head {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
         }
         h1, p {
             text-align: center;
             margin: auto;
+            color: #F9FAF8;
         }
+
         h1.headitem{
             margin: auto;
             text-align:center;
+            font-size: 48px;
+            font-weight: 900;
+        }
+
+        .jumbotron{
+            margin: auto;
+            max-width: 700px;
+            width: 700px;
+            box-shadow: 1px 1px 5px 9px #888888;
+            border-radius: 2rem;
+            margin-top: 20px;
+        }
+        .my-4{
+            color: #1F2937;
+        }
+        .display-4{
+            font-weight: 1000;
+            color: #1F2937;
+            font-size: 80px;
         }
 
 
@@ -54,38 +105,39 @@
         <p class="headitem">This application lists the current number of cases reported across the globe</p>
     </div>
 
-<div class="jumbotron">
-    <div class="title">
-        <h1 class="display-4" th:text="${cases}"></h1>
-        <p class="lead">Total cases reported</p>
+    <div class="jumbotron">
+        <div class="title">
+            <p class="lead">CASE REPORTS:</p>
+            <h1 class="display-4" th:text="${cases}"></h1>
+
+        </div>
+
+        <hr class="my-4">
+        <div class="main">
+            <div class="box">
+                <div>Total deaths reported:</div>
+                <div th:text="${deaths}"></div>
+            </div>
+            <div class="box">
+                <div>Total recovered:</div>
+                <div th:text="${recovered}"></div>
+            </div>
+            <div class="box">
+                <div>Total recovered today:</div>
+                <div th:text="${todayRecovered}"></div>
+            </div>
+            <div class="box">
+                <div>Total critical cases:</div>
+                <div th:text="${critical}"></div>
+            </div>
+            <div class="box">
+                <div>Total active cases:</div>
+                <div th:text="${active}"></div>
+            </div>
+
+        </div>
+
     </div>
-
-    <hr class="my-4">
-    <div class="main">
-        <div class="box">
-            <div>Total deaths reported:</div>
-            <div th:text="${deaths}"></div>
-        </div>
-        <div class="box">
-            <div>Total recovered:</div>
-            <div th:text="${recovered}"></div>
-        </div>
-        <div class="box">
-            <div>Total recovered today:</div>
-            <div th:text="${todayRecovered}"></div>
-        </div>
-        <div class="box">
-            <div>Total critical cases:</div>
-            <div th:text="${critical}"></div>
-        </div>
-        <div class="box">
-            <div>Total active cases:</div>
-            <div th:text="${active}"></div>
-        </div>
-
-    </div>
-
-</div>
 </div>
 </body>
 
