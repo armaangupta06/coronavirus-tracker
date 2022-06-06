@@ -34,7 +34,7 @@ public class HomeController {
         model.addAttribute("active", active);
         model.addAttribute("critical", critical);
 
-        //Return "home" because the method directs the webpage to the home.html.
-        return "home";
+        //Return "home" because the method directs the webpage to the index.html.
+        return "index";
     }
 }
